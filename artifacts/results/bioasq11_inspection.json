@@ -1,0 +1,22 @@
+{
+  "path": "data/official/training11b.json",
+  "sha256": "6df656862ca860efc355c7805d07ddca700d64ecc3785c519a49afccaaeeac98",
+  "record_count": 4719,
+  "question_type_counts": {
+    "factoid": 1417,
+    "list": 901,
+    "summary": 1130,
+    "yesno": 1271
+  },
+  "records_with_nonempty_field": {
+    "documents": 4719,
+    "exact_answer": 3589,
+    "ideal_answer": 4719,
+    "snippets": 4719
+  },
+  "document_reference_count": 42608,
+  "snippet_count": 56795,
+  "embedded_article_text_count": 0,
+  "duplicate_question_id_count": 0,
+  "source_note": "BioASQ11 training JSON is a question/evidence reference file; document references are URLs and do not embed article abstracts."
+}

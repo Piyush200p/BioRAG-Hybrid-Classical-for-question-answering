@@ -1,0 +1,1098 @@
+{
+  "status": "executed",
+  "data_path": "data/official/training11b.json",
+  "record_count": 20,
+  "corpus_count": 40160,
+  "lexical_weight": 0.6,
+  "selector": "hmm",
+  "input_sha256": "6df656862ca860efc355c7805d07ddca700d64ecc3785c519a49afccaaeeac98",
+  "evidence_note": "Candidate HMM states and verbatim extraction do not certify biomedical entailment. Short-answer generation and official BioASQ scoring remain pending.",
+  "aggregate_metrics": {
+    "recall_at_3": 0.293591,
+    "mrr_at_3": 0.95,
+    "summary_token_f1": 0.246352,
+    "rouge_l_f1": 0.180096
+  },
+  "records": [
+    {
+      "question_id": "55031181e9bde69634000014",
+      "question_type": "summary",
+      "question": "Is Hirschsprung disease a mendelian or a multifactorial disorder?",
+      "ranked_documents": [
+        {
+          "id": "15858239",
+          "title": "[The role of ret gene in the pathogenesis of Hirschsprung disease].",
+          "score": 0.98034,
+          "bm25_score": 25.095106,
+          "subword_cosine": 0.500076
+        },
+        {
+          "id": "6650562",
+          "title": "Hirschsprung disease: etiologic implications of unsuccessful prenatal diagnosis.",
+          "score": 0.876194,
+          "bm25_score": 23.410031,
+          "subword_cosine": 0.416116
+        },
+        {
+          "id": "11106284",
+          "title": "Genetics of Hirschsprung disease.",
+          "score": 0.870836,
+          "bm25_score": 24.483374,
+          "subword_cosine": 0.375329
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "Hirschsprung disease is a congenital disorder with the incidence of 1 per 5000 live births, characterized by the absence of intestinal ganglion cells.",
+          "document_id": "15858239",
+          "state": "SUPPORT",
+          "overlap": 0.6,
+          "position": 0
+        },
+        {
+          "sentence": "In the etiology of Hirschsprung disease various genes play a role; these are: RET, EDNRB, GDNF, EDN3 and SOX10, NTN3, ECE1, Mutations in these genes may result in dominant, recessive or multifactorial patterns of inheritance.",
+          "document_id": "15858239",
+          "state": "SUPPORT",
+          "overlap": 0.6,
+          "position": 1
+        }
+      ],
+      "predicted_summary": "Hirschsprung disease is a congenital disorder with the incidence of 1 per 5000 live births, characterized by the absence of intestinal ganglion cells. In the etiology of Hirschsprung disease various genes play a role; these are: RET, EDNRB, GDNF, EDN3 and SOX10, NTN3, ECE1, Mutations in these genes may result in dominant, recessive or multifactorial patterns of inheritance.",
+      "short_answer": null,
+      "reference_summary": "Coding sequence mutations in RET, GDNF, EDNRB, EDN3, and SOX10 are involved in the development of Hirschsprung disease. The majority of these genes was shown to be related to Mendelian syndromic forms of Hirschsprung's disease, whereas the non-Mendelian inheritance of sporadic non-syndromic Hirschsprung disease proved to be complex; involvement of multiple loci was demonstrated in a multiplicative model.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.222222,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.448276,
+        "rouge_l_f1": 0.189655
+      }
+    },
+    {
+      "question_id": "55046d5ff8aee20f27000007",
+      "question_type": "list",
+      "question": "List signaling molecules (ligands) that interact with the receptor EGFR?",
+      "ranked_documents": [
+        {
+          "id": "23382875",
+          "title": "Molecular determinants of epidermal growth factor binding: a molecular dynamics study.",
+          "score": 0.94265,
+          "bm25_score": 23.534949,
+          "subword_cosine": 0.48601
+        },
+        {
+          "id": "23888072",
+          "title": "Ligand-dependent activation of EGFR in follicular dendritic cells sarcoma is sustained by local production of cognate ligands.",
+          "score": 0.933455,
+          "bm25_score": 26.022225,
+          "subword_cosine": 0.405156
+        },
+        {
+          "id": "22260327",
+          "title": "EGFR ligands exhibit functional differences in models of paracrine and autocrine signaling.",
+          "score": 0.93259,
+          "bm25_score": 25.173057,
+          "subword_cosine": 0.427895
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "The epidermal growth factor receptor (EGFR) is a member of the receptor tyrosine kinase family that plays a role in multiple cellular processes.",
+          "document_id": "23382875",
+          "state": "SUPPORT",
+          "overlap": 0.285714,
+          "position": 0
+        },
+        {
+          "sentence": "Activation of EGFR requires binding of a ligand on the extracellular domain to promote conformational changes leading to dimerization and transphosphorylation of intracellular kinase domains.",
+          "document_id": "23382875",
+          "state": "SUPPORT",
+          "overlap": 0.142857,
+          "position": 1
+        }
+      ],
+      "predicted_summary": "The epidermal growth factor receptor (EGFR) is a member of the receptor tyrosine kinase family that plays a role in multiple cellular processes. Activation of EGFR requires binding of a ligand on the extracellular domain to promote conformational changes leading to dimerization and transphosphorylation of intracellular kinase domains.",
+      "short_answer": null,
+      "reference_summary": "The 7 known EGFR ligands  are: epidermal growth factor (EGF), betacellulin (BTC), epiregulin (EPR), heparin-binding EGF (HB-EGF), transforming growth factor-\u03b1 [TGF-\u03b1], amphiregulin (AREG) and epigen (EPG).",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.1875,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.162162,
+        "rouge_l_f1": 0.135135
+      }
+    },
+    {
+      "question_id": "54e25eaaae9738404b000017",
+      "question_type": "yesno",
+      "question": "Is the protein Papilin secreted?",
+      "ranked_documents": [
+        {
+          "id": "11076767",
+          "title": "Papilin in development; a pericellular protein with a homology to the ADAMTS metalloproteinases.",
+          "score": 0.997186,
+          "bm25_score": 24.410925,
+          "subword_cosine": 0.50637
+        },
+        {
+          "id": "15094122",
+          "title": "Papilin, a novel component of basement membranes, in relation to ADAMTS metalloproteases and ECM development.",
+          "score": 0.863367,
+          "bm25_score": 20.857597,
+          "subword_cosine": 0.447111
+        },
+        {
+          "id": "3320045",
+          "title": "Papilin: a Drosophila proteoglycan-like sulfated glycoprotein from basement membranes.",
+          "score": 0.84847,
+          "bm25_score": 19.13515,
+          "subword_cosine": 0.482093
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "Papilin is an extracellular matrix glycoprotein that we have found to be involved in, (1) thin matrix layers during gastrulation, (2) matrix associated with wandering, phagocytic hemocytes, (3) basement membranes and (4) space-filling matrix during Drosophila development.",
+          "document_id": "11076767",
+          "state": "SUPPORT",
+          "overlap": 0.333333,
+          "position": 0
+        },
+        {
+          "sentence": "A distinctly conserved 'papilin cassette' of domains at the amino-end of papilins is also the carboxyl-end of the ADAMTS subgroup of secreted, matrix-associated metalloproteinases; this cassette contains one thrombospondin type 1 (TSR) domain, a specific cysteine-rich domain and several partial TSR domains.",
+          "document_id": "11076767",
+          "state": "SUPPORT",
+          "overlap": 0.666667,
+          "position": 2
+        }
+      ],
+      "predicted_summary": "Papilin is an extracellular matrix glycoprotein that we have found to be involved in, (1) thin matrix layers during gastrulation, (2) matrix associated with wandering, phagocytic hemocytes, (3) basement membranes and (4) space-filling matrix during Drosophila development. A distinctly conserved 'papilin cassette' of domains at the amino-end of papilins is also the carboxyl-end of the ADAMTS subgroup of secreted, matrix-associated metalloproteinases; this cassette contains one thrombospondin type 1 (TSR) domain, a specific cysteine-rich domain and several partial TSR domains.",
+      "short_answer": null,
+      "reference_summary": "Yes,  papilin is a secreted protein",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.3,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.094118,
+        "rouge_l_f1": 0.094118
+      }
+    },
+    {
+      "question_id": "535d292a9a4572de6f000003",
+      "question_type": "yesno",
+      "question": "Are long non coding RNAs spliced?",
+      "ranked_documents": [
+        {
+          "id": "22955974",
+          "title": "Deep sequencing of subcellular RNA fractions shows splicing to be predominantly co-transcriptional in the human genome but inefficient for lncRNAs.",
+          "score": 0.87196,
+          "bm25_score": 17.479118,
+          "subword_cosine": 0.538064
+        },
+        {
+          "id": "30447999",
+          "title": "Production of Spliced Long Noncoding RNAs Specifies Regions with Increased Enhancer Activity.",
+          "score": 0.867947,
+          "bm25_score": 21.222798,
+          "subword_cosine": 0.381611
+        },
+        {
+          "id": "22303401",
+          "title": "The Long Non-Coding RNAs: A New (P)layer in the \"Dark Matter\".",
+          "score": 0.838271,
+          "bm25_score": 17.47012,
+          "subword_cosine": 0.490446
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "The remaining exons exist as a mixture of spliced and fewer unspliced molecules, with a median coSI of 0.75.",
+          "document_id": "22955974",
+          "state": "SUPPORT",
+          "overlap": 0.2,
+          "position": 7
+        },
+        {
+          "sentence": "Thus, most RNAs undergo splicing while being transcribed: \"co-transcriptional splicing.\" Consistent with co-transcriptional spliceosome assembly and splicing, we have found significant enrichment of spliceosomal snRNAs in chromatin-associated RNA compared with other cellular RNA fractions and other nonspliceosomal snRNAs.",
+          "document_id": "22955974",
+          "state": "SUPPORT",
+          "overlap": 0.2,
+          "position": 8
+        }
+      ],
+      "predicted_summary": "The remaining exons exist as a mixture of spliced and fewer unspliced molecules, with a median coSI of 0.75. Thus, most RNAs undergo splicing while being transcribed: \"co-transcriptional splicing.\" Consistent with co-transcriptional spliceosome assembly and splicing, we have found significant enrichment of spliceosomal snRNAs in chromatin-associated RNA compared with other cellular RNA fractions and other nonspliceosomal snRNAs.",
+      "short_answer": null,
+      "reference_summary": "Long non coding RNAs appear to be spliced through the same pathway as the mRNAs",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.166667,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.109589,
+        "rouge_l_f1": 0.054795
+      }
+    },
+    {
+      "question_id": "55262a9787ecba3764000009",
+      "question_type": "yesno",
+      "question": "Is RANKL secreted from the cells?",
+      "ranked_documents": [
+        {
+          "id": "23698708",
+          "title": "Activated human T cells express alternative mRNA transcripts encoding a secreted form of RANKL.",
+          "score": 1.0,
+          "bm25_score": 25.817257,
+          "subword_cosine": 0.503297
+        },
+        {
+          "id": "23139212",
+          "title": "RANKL expression, function, and therapeutic targeting in multiple myeloma and chronic lymphocytic leukemia.",
+          "score": 0.71923,
+          "bm25_score": 16.720691,
+          "subword_cosine": 0.416021
+        },
+        {
+          "id": "23241893",
+          "title": "Receptor activator for NF-\u03baB ligand in acute myeloid leukemia: expression, function, and modulation of NK cell immunosurveillance.",
+          "score": 0.711982,
+          "bm25_score": 15.745491,
+          "subword_cosine": 0.435418
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "Receptor activator of nuclear factor-kappaB-ligand (RANKL), encoded by the gene TNFSF11, is required for osteoclastogenesis, and its expression is upregulated in pathologic bone loss.",
+          "document_id": "23698708",
+          "state": "SUPPORT",
+          "overlap": 0.333333,
+          "position": 0
+        },
+        {
+          "sentence": "Transcript variants of TNFSF11 messenger RNA (mRNA) have been described that encode a membrane-bound and a putative secreted form of RANKL.",
+          "document_id": "23698708",
+          "state": "SUPPORT",
+          "overlap": 0.666667,
+          "position": 1
+        }
+      ],
+      "predicted_summary": "Receptor activator of nuclear factor-kappaB-ligand (RANKL), encoded by the gene TNFSF11, is required for osteoclastogenesis, and its expression is upregulated in pathologic bone loss. Transcript variants of TNFSF11 messenger RNA (mRNA) have been described that encode a membrane-bound and a putative secreted form of RANKL.",
+      "short_answer": null,
+      "reference_summary": "Receptor activator of nuclear factor \u03baB ligand (RANKL) is a cytokine predominantly secreted by osteoblasts.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.1,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.3,
+        "rouge_l_f1": 0.266667
+      }
+    },
+    {
+      "question_id": "51406e6223fec90375000009",
+      "question_type": "yesno",
+      "question": "Does metformin interfere thyroxine absorption?",
+      "ranked_documents": [
+        {
+          "id": "19942153",
+          "title": "Conditions and drugs interfering with thyroxine absorption.",
+          "score": 1.0,
+          "bm25_score": 27.563947,
+          "subword_cosine": 0.595597
+        },
+        {
+          "id": "26191653",
+          "title": "Metformin Does Not Suppress Serum Thyrotropin by Increasing Levothyroxine Absorption.",
+          "score": 0.925788,
+          "bm25_score": 26.184085,
+          "subword_cosine": 0.52982
+        },
+        {
+          "id": "17725434",
+          "title": "New medications which decrease levothyroxine absorption.",
+          "score": 0.881929,
+          "bm25_score": 24.898585,
+          "subword_cosine": 0.506179
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "Food, dietary fibre and espresso coffee interfere with the absorption of levothyroxine.",
+          "document_id": "19942153",
+          "state": "SUPPORT",
+          "overlap": 0.5,
+          "position": 0
+        },
+        {
+          "sentence": "Malabsorptive disorders reported to affect the absorption of levothyroxine include coeliac disease, inflammatory bowel disease, lactose intolerance as well as Helicobacter pylori (H. pylori) infection and atrophic gastritis.",
+          "document_id": "19942153",
+          "state": "SUPPORT",
+          "overlap": 0.25,
+          "position": 1
+        }
+      ],
+      "predicted_summary": "Food, dietary fibre and espresso coffee interfere with the absorption of levothyroxine. Malabsorptive disorders reported to affect the absorption of levothyroxine include coeliac disease, inflammatory bowel disease, lactose intolerance as well as Helicobacter pylori (H. pylori) infection and atrophic gastritis.",
+      "short_answer": null,
+      "reference_summary": "No. There are not reported data indicating that metformin reduce with thyroxine absorption.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 1.0,
+        "mrr_at_3": 0.5,
+        "summary_token_f1": 0.113208,
+        "rouge_l_f1": 0.075472
+      }
+    },
+    {
+      "question_id": "553fa78b1d53b76422000007",
+      "question_type": "list",
+      "question": "Which miRNAs could be used as potential biomarkers for epithelial ovarian cancer?",
+      "ranked_documents": [
+        {
+          "id": "23542579",
+          "title": "Detection of microRNA as novel biomarkers of epithelial ovarian cancer from the serum of ovarian cancer patients.",
+          "score": 1.0,
+          "bm25_score": 38.368165,
+          "subword_cosine": 0.516692
+        },
+        {
+          "id": "23978303",
+          "title": "Candidate microRNA biomarkers in human epithelial ovarian cancer: systematic review profiling studies and experimental validation.",
+          "score": 0.905362,
+          "bm25_score": 34.959737,
+          "subword_cosine": 0.463296
+        },
+        {
+          "id": "18954897",
+          "title": "The detection of differentially expressed microRNAs from the serum of ovarian cancer patients using a novel real-time PCR platform.",
+          "score": 0.90384,
+          "bm25_score": 33.967828,
+          "subword_cosine": 0.481367
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "The aim of this study was to find specific profiles of serum-derived miRNAs of ovarian cancer based on a comparative study using a miRNA microarray of serum, tissue, and ascites.",
+          "document_id": "23542579",
+          "state": "SUPPORT",
+          "overlap": 0.375,
+          "position": 3
+        },
+        {
+          "sentence": "METHODS: From 2 ovarian cancer patients and a healthy control, total RNA was isolated from their serum, tissue, and ascites, respectively, and analyzed by a microarray.",
+          "document_id": "23542579",
+          "state": "SUPPORT",
+          "overlap": 0.25,
+          "position": 4
+        }
+      ],
+      "predicted_summary": "The aim of this study was to find specific profiles of serum-derived miRNAs of ovarian cancer based on a comparative study using a miRNA microarray of serum, tissue, and ascites. METHODS: From 2 ovarian cancer patients and a healthy control, total RNA was isolated from their serum, tissue, and ascites, respectively, and analyzed by a microarray.",
+      "short_answer": null,
+      "reference_summary": "miR-200a, miR-100, miR-141, miR-200b, miR-200c, miR-203, miR-510, miR-509-5p, miR-132, miR-26a, let-7b, miR-145, miR-182, miR-152, miR-148a, let-7a, let-7i, miR-21, miR-92 and miR-93 could be used as potential biomarkers for epithelial ovarian cancer.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.214286,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.068966,
+        "rouge_l_f1": 0.068966
+      }
+    },
+    {
+      "question_id": "5149199dd24251bc05000040",
+      "question_type": "list",
+      "question": "Which acetylcholinesterase inhibitors are used for treatment of myasthenia gravis?",
+      "ranked_documents": [
+        {
+          "id": "29655452",
+          "title": "Treatment of Myasthenia Gravis.",
+          "score": 1.0,
+          "bm25_score": 48.800542,
+          "subword_cosine": 0.69212
+        },
+        {
+          "id": "21328290",
+          "title": "Acetylcholinesterase inhibitor treatment for myasthenia gravis.",
+          "score": 0.941098,
+          "bm25_score": 45.622608,
+          "subword_cosine": 0.657809
+        },
+        {
+          "id": "15610702",
+          "title": "Autoimmune Myasthenia Gravis: Recommendations for Treatment and Immunologic Modulation.",
+          "score": 0.838634,
+          "bm25_score": 42.367391,
+          "subword_cosine": 0.549768
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "With specialized care, patients with myasthenia gravis can have very good outcomes.",
+          "document_id": "29655452",
+          "state": "SUPPORT",
+          "overlap": 0.333333,
+          "position": 0
+        },
+        {
+          "sentence": "The mainstays of treatment are acetylcholinesterase inhibitors, and immunosuppressive and immunomodulatory therapies.",
+          "document_id": "29655452",
+          "state": "SUPPORT",
+          "overlap": 0.5,
+          "position": 1
+        }
+      ],
+      "predicted_summary": "With specialized care, patients with myasthenia gravis can have very good outcomes. The mainstays of treatment are acetylcholinesterase inhibitors, and immunosuppressive and immunomodulatory therapies.",
+      "short_answer": null,
+      "reference_summary": "Pyridostigmine and neostygmine are acetylcholinesterase inhibitors that are used as first-line therapy for symptomatic treatment of myasthenia gravis. Pyridostigmine is the most widely used acetylcholinesterase inhibitor. Extended release pyridotsygmine and novel acetylcholinesterase inhibitors inhibitors with oral antisense oligonucleotides are being studied.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.333333,
+        "mrr_at_3": 0.5,
+        "summary_token_f1": 0.338462,
+        "rouge_l_f1": 0.153846
+      }
+    },
+    {
+      "question_id": "52bf1db603868f1b06000011",
+      "question_type": "yesno",
+      "question": "Has Denosumab (Prolia) been approved by FDA?",
+      "ranked_documents": [
+        {
+          "id": "21170699",
+          "title": "[Austrian guidance for the pharmacologic treatment of osteoporosis in postmenopausal women: Addendum 2010].",
+          "score": 0.895756,
+          "bm25_score": 37.001398,
+          "subword_cosine": 0.282878
+        },
+        {
+          "id": "21208140",
+          "title": "The role and efficacy of denosumab in the treatment of osteoporosis: an update.",
+          "score": 0.787965,
+          "bm25_score": 29.932985,
+          "subword_cosine": 0.289409
+        },
+        {
+          "id": "24126422",
+          "title": "Denosumab: recent update in postmenopausal osteoporosis.",
+          "score": 0.787085,
+          "bm25_score": 32.217791,
+          "subword_cosine": 0.253131
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "The fully human monoclonal antibody denosumab (Prolia(\u00ae)) has been recently approved by the European Medical Agency (EMEA) and the Food and Drug Administration (FDA) for the treatment of postmenopausal osteoporosis.",
+          "document_id": "21170699",
+          "state": "SUPPORT",
+          "overlap": 1.0,
+          "position": 1
+        },
+        {
+          "sentence": "Denosumab has been shown to reduce vertebral, non-vertebral,and hip-fracture risk effectively.",
+          "document_id": "21170699",
+          "state": "SUPPORT",
+          "overlap": 0.4,
+          "position": 2
+        }
+      ],
+      "predicted_summary": "The fully human monoclonal antibody denosumab (Prolia(\u00ae)) has been recently approved by the European Medical Agency (EMEA) and the Food and Drug Administration (FDA) for the treatment of postmenopausal osteoporosis. Denosumab has been shown to reduce vertebral, non-vertebral,and hip-fracture risk effectively.",
+      "short_answer": null,
+      "reference_summary": "Yes, Denosumab was approved by the FDA in 2010.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.142857,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.196078,
+        "rouge_l_f1": 0.196078
+      }
+    },
+    {
+      "question_id": "5709e4b2cf1c32585100001c",
+      "question_type": "list",
+      "question": "List the human genes encoding for the dishevelled proteins?",
+      "ranked_documents": [
+        {
+          "id": "8149913",
+          "title": "dishevelled is required during wingless signaling to establish both cell polarity and cell identity.",
+          "score": 0.960672,
+          "bm25_score": 19.868146,
+          "subword_cosine": 0.494042
+        },
+        {
+          "id": "8856345",
+          "title": "Wnt-mediated relocalization of dishevelled proteins.",
+          "score": 0.931355,
+          "bm25_score": 19.11798,
+          "subword_cosine": 0.484916
+        },
+        {
+          "id": "19561403",
+          "title": "Negative feedback regulation of Wnt signaling by Gbetagamma-mediated reduction of Dishevelled.",
+          "score": 0.861744,
+          "bm25_score": 19.5478,
+          "subword_cosine": 0.371784
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "The dishevelled gene of Drosophila is required to establish coherent arrays of polarized cells and is also required to establish segments in the embryo.",
+          "document_id": "8149913",
+          "state": "CONTEXT",
+          "overlap": 0.166667,
+          "position": 0
+        },
+        {
+          "sentence": "Here, we show that loss of dishevelled function in clones, in double heterozygotes with wingless mutants and in flies bearing a weak dishevelled transgene leads to patterning defects which phenocopy defects observed in wingless mutants alone.",
+          "document_id": "8149913",
+          "state": "CONTEXT",
+          "overlap": 0.166667,
+          "position": 1
+        }
+      ],
+      "predicted_summary": "The dishevelled gene of Drosophila is required to establish coherent arrays of polarized cells and is also required to establish segments in the embryo. Here, we show that loss of dishevelled function in clones, in double heterozygotes with wingless mutants and in flies bearing a weak dishevelled transgene leads to patterning defects which phenocopy defects observed in wingless mutants alone.",
+      "short_answer": null,
+      "reference_summary": "DVL-1\nDVL-2\nDVL-3",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.222222,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.0,
+        "rouge_l_f1": 0.0
+      }
+    },
+    {
+      "question_id": "56bc751eac7ad10019000013",
+      "question_type": "factoid",
+      "question": "Name synonym of Acrokeratosis paraneoplastica.",
+      "ranked_documents": [
+        {
+          "id": "17097409",
+          "title": "Acrokeratosis paraneoplastica (Bazex's syndrome): association with liposarcoma.",
+          "score": 1.0,
+          "bm25_score": 32.770747,
+          "subword_cosine": 0.615088
+        },
+        {
+          "id": "16435144",
+          "title": "Acrokeratosis paraneoplastica of Bazex as an indicator for underlying squamous cell carcinoma of the lung.",
+          "score": 0.925645,
+          "bm25_score": 29.843659,
+          "subword_cosine": 0.583161
+        },
+        {
+          "id": "22146896",
+          "title": "[Paraneoplastic palmoplantar hyperkeratosis. Minor form of acrokeratosis neoplastica Bazex?].",
+          "score": 0.894324,
+          "bm25_score": 28.337369,
+          "subword_cosine": 0.577405
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "Acrokeratosis paraneoplastica (Bazex's syndrome) is a rare obligate paraneoplastic dermatosis characterized by erythematosquamous lesions localized symmetrically at the acral sites.",
+          "document_id": "17097409",
+          "state": "SUPPORT",
+          "overlap": 0.5,
+          "position": 0
+        },
+        {
+          "sentence": "We describe a case of acrokeratosis paraneoplastica associated with a retroperitoneal liposarcoma in a 71-year-old Caucasian man.",
+          "document_id": "17097409",
+          "state": "SUPPORT",
+          "overlap": 0.5,
+          "position": 5
+        }
+      ],
+      "predicted_summary": "Acrokeratosis paraneoplastica (Bazex's syndrome) is a rare obligate paraneoplastic dermatosis characterized by erythematosquamous lesions localized symmetrically at the acral sites. We describe a case of acrokeratosis paraneoplastica associated with a retroperitoneal liposarcoma in a 71-year-old Caucasian man.",
+      "short_answer": null,
+      "reference_summary": "Acrokeratosis paraneoplastic (Bazex syndrome) is a rare, but distinctive paraneoplastic dermatosis characterized by erythematosquamous lesions located at the acral sites and is most commonly associated with carcinomas of the upper aerodigestive tract.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.2,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.521739,
+        "rouge_l_f1": 0.492754
+      }
+    },
+    {
+      "question_id": "54d4e03a3706e89528000001",
+      "question_type": "list",
+      "question": "Which are the classes of anti-arrhythmic drugs according to Vaughan-Williams classification?",
+      "ranked_documents": [
+        {
+          "id": "1290288",
+          "title": "[Principles for the classification of anti-arrhythmia agents in cardiac arrhythmias].",
+          "score": 1.0,
+          "bm25_score": 22.887862,
+          "subword_cosine": 0.589762
+        },
+        {
+          "id": "10810787",
+          "title": "[Current classification of anti-arrhythmia agents].",
+          "score": 0.86864,
+          "bm25_score": 19.617806,
+          "subword_cosine": 0.522476
+        },
+        {
+          "id": "11564050",
+          "title": "Therapeutic drug monitoring: antiarrhythmic drugs.",
+          "score": 0.833937,
+          "bm25_score": 18.896137,
+          "subword_cosine": 0.499203
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "Clinically useful antiarrhythmic drugs are a group of heterogenous compounds, both with respect to chemical structure and to cellular mechanism of action.",
+          "document_id": "1290288",
+          "state": "CONTEXT",
+          "overlap": 0.166667,
+          "position": 0
+        },
+        {
+          "sentence": "The classification of antiarrhythmic agents according to Vaughan Williams is based on electrophysiological findings in isolated heart muscle and defines four classes of drug actions.",
+          "document_id": "1290288",
+          "state": "SUPPORT",
+          "overlap": 0.5,
+          "position": 1
+        }
+      ],
+      "predicted_summary": "Clinically useful antiarrhythmic drugs are a group of heterogenous compounds, both with respect to chemical structure and to cellular mechanism of action. The classification of antiarrhythmic agents according to Vaughan Williams is based on electrophysiological findings in isolated heart muscle and defines four classes of drug actions.",
+      "short_answer": null,
+      "reference_summary": "Antiarrhythmic drugs can be divided into four Vaughan Williams classes (I-IV). Class I antiarrhythmic agents have as a common action, blockade of the sodium channels. Class II agents are antisympathetic drugs, particularly the beta-adrenoceptor blockers. Class-III antiarrhythmics have as a common action the potassium-channel blockade. Class IV antiarrhythmic drugs are calcium channel blockers.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.6,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.26,
+        "rouge_l_f1": 0.14
+      }
+    },
+    {
+      "question_id": "55072c803b8a5dc045000001",
+      "question_type": "list",
+      "question": "Which are the different isoforms of the mammalian Notch receptor?",
+      "ranked_documents": [
+        {
+          "id": "21356309",
+          "title": "Numb regulates Notch1, but not Notch3, during myogenesis.",
+          "score": 0.964387,
+          "bm25_score": 18.841825,
+          "subword_cosine": 0.38889
+        },
+        {
+          "id": "27466320",
+          "title": "Numb regulates the balance between Notch recycling and late-endosome targeting in Drosophila neural progenitor cells.",
+          "score": 0.960487,
+          "bm25_score": 18.260134,
+          "subword_cosine": 0.402947
+        },
+        {
+          "id": "31922915",
+          "title": "Blocking Notch3 Signaling Abolishes MUC5AC Production in Airway Epithelial Cells from Individuals with Asthma.",
+          "score": 0.925442,
+          "bm25_score": 19.547427,
+          "subword_cosine": 0.32784
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "Numb, an adaptor protein that promotes Notch degradation by recruiting the E3 ubiquitin ligase, Itch, is limited in expression to dividing cells of the dorsal medial lip of the dermomyotome and the myotome itself.",
+          "document_id": "21356309",
+          "state": "SUPPORT",
+          "overlap": 0.2,
+          "position": 4
+        },
+        {
+          "sentence": "Here the specificity of the four protein isoforms of Numb for the Notch receptors was examined.",
+          "document_id": "21356309",
+          "state": "SUPPORT",
+          "overlap": 0.4,
+          "position": 5
+        }
+      ],
+      "predicted_summary": "Numb, an adaptor protein that promotes Notch degradation by recruiting the E3 ubiquitin ligase, Itch, is limited in expression to dividing cells of the dorsal medial lip of the dermomyotome and the myotome itself. Here the specificity of the four protein isoforms of Numb for the Notch receptors was examined.",
+      "short_answer": null,
+      "reference_summary": "Notch signaling is an evolutionarily conserved mechanism, used to regulate cell fate decisions. Four Notch receptors have been identified in man: Notch-1, Notch-2, Notch-3 and Notch-4.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.142857,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.236842,
+        "rouge_l_f1": 0.157895
+      }
+    },
+    {
+      "question_id": "53061af558348c0f52000002",
+      "question_type": "list",
+      "question": "Which are the major characteristics of cellular senescence?",
+      "ranked_documents": [
+        {
+          "id": "18976161",
+          "title": "Cellular senescence: molecular mechanisms, in vivo significance, and redox considerations.",
+          "score": 1.0,
+          "bm25_score": 22.926656,
+          "subword_cosine": 0.572645
+        },
+        {
+          "id": "17634581",
+          "title": "Inducing cellular senescence using defined genetic elements.",
+          "score": 0.788402,
+          "bm25_score": 17.05454,
+          "subword_cosine": 0.489723
+        },
+        {
+          "id": "33855023",
+          "title": "Mechanisms of Cellular Senescence: Cell Cycle Arrest and Senescence Associated Secretory Phenotype.",
+          "score": 0.782791,
+          "bm25_score": 16.66387,
+          "subword_cosine": 0.496327
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "Cellular senescence is recognized as a critical cellular response to prolonged rounds of replication and environmental stresses.",
+          "document_id": "18976161",
+          "state": "SUPPORT",
+          "overlap": 0.5,
+          "position": 0
+        },
+        {
+          "sentence": "Its defining characteristics are arrested cell-cycle progression and the development of aberrant gene expression with proinflammatory behavior.",
+          "document_id": "18976161",
+          "state": "SUPPORT",
+          "overlap": 0.25,
+          "position": 1
+        }
+      ],
+      "predicted_summary": "Cellular senescence is recognized as a critical cellular response to prolonged rounds of replication and environmental stresses. Its defining characteristics are arrested cell-cycle progression and the development of aberrant gene expression with proinflammatory behavior.",
+      "short_answer": null,
+      "reference_summary": "The defining characteristics of cellular senescence are altered morphology, arrested cell-cycle progression, development of aberrant gene expression with proinflammatory behavior, and telomere shortening.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.333333,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.666667,
+        "rouge_l_f1": 0.491228
+      }
+    },
+    {
+      "question_id": "56c1f01def6e394741000045",
+      "question_type": "factoid",
+      "question": "Orteronel was developed for treatment of which cancer?",
+      "ranked_documents": [
+        {
+          "id": "24799061",
+          "title": "Orteronel for the treatment of prostate cancer.",
+          "score": 1.0,
+          "bm25_score": 22.767913,
+          "subword_cosine": 0.553198
+        },
+        {
+          "id": "25264242",
+          "title": "Assessment of cytochrome P450-mediated drug-drug interaction potential of orteronel and exposure changes in patients with renal impairment using physiologically based pharmacokinetic modeling and simulation.",
+          "score": 0.876529,
+          "bm25_score": 21.158753,
+          "subword_cosine": 0.441085
+        },
+        {
+          "id": "25537627",
+          "title": "A phase 1 multiple-dose study of orteronel in Japanese patients with castration-resistant prostate cancer.",
+          "score": 0.820815,
+          "bm25_score": 20.021536,
+          "subword_cosine": 0.40548
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "Orteronel (also known as TAK-700) is a novel hormonal therapy that is currently in testing for the treatment of prostate cancer.",
+          "document_id": "24799061",
+          "state": "SUPPORT",
+          "overlap": 0.75,
+          "position": 0
+        },
+        {
+          "sentence": "Orteronel inhibits the 17,20 lyase activity of the enzyme CYP17A1, which is important for androgen synthesis in the testes, adrenal glands and prostate cancer cells.",
+          "document_id": "24799061",
+          "state": "SUPPORT",
+          "overlap": 0.5,
+          "position": 1
+        }
+      ],
+      "predicted_summary": "Orteronel (also known as TAK-700) is a novel hormonal therapy that is currently in testing for the treatment of prostate cancer. Orteronel inhibits the 17,20 lyase activity of the enzyme CYP17A1, which is important for androgen synthesis in the testes, adrenal glands and prostate cancer cells.",
+      "short_answer": null,
+      "reference_summary": "Orteronel was developed for treatment of castration-resistant prostate cancer.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.333333,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.214286,
+        "rouge_l_f1": 0.214286
+      }
+    },
+    {
+      "question_id": "5313b049e3eabad021000013",
+      "question_type": "yesno",
+      "question": "Is the monoclonal antibody Trastuzumab (Herceptin) of potential use in the treatment of prostate cancer?",
+      "ranked_documents": [
+        {
+          "id": "22505344",
+          "title": "Effects of a human compact anti-ErbB2 antibody on prostate cancer.",
+          "score": 0.951358,
+          "bm25_score": 37.823067,
+          "subword_cosine": 0.540347
+        },
+        {
+          "id": "15264245",
+          "title": "The use of trastuzumab in the treatment of hormone refractory prostate cancer; phase II trial.",
+          "score": 0.948047,
+          "bm25_score": 39.955955,
+          "subword_cosine": 0.49054
+        },
+        {
+          "id": "11236029",
+          "title": "HER-2/neu as a therapeutic target in non-small cell lung cancer, prostate cancer, and ovarian cancer.",
+          "score": 0.93927,
+          "bm25_score": 38.411123,
+          "subword_cosine": 0.510865
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "Prostate cancer is the most commonly diagnosed malignancy in men in developed countries.",
+          "document_id": "22505344",
+          "state": "SUPPORT",
+          "overlap": 0.222222,
+          "position": 0
+        },
+        {
+          "sentence": "ErbB2, a tyrosine kinase receptor overexpressed in many human cancer types, contributes to prostate cancer progression by activating the androgen receptor in a steroid poor environment, thus promoting androgen-independent cell growth.",
+          "document_id": "22505344",
+          "state": "SUPPORT",
+          "overlap": 0.222222,
+          "position": 1
+        }
+      ],
+      "predicted_summary": "Prostate cancer is the most commonly diagnosed malignancy in men in developed countries. ErbB2, a tyrosine kinase receptor overexpressed in many human cancer types, contributes to prostate cancer progression by activating the androgen receptor in a steroid poor environment, thus promoting androgen-independent cell growth.",
+      "short_answer": null,
+      "reference_summary": "Although is still controversial, Trastuzumab (Herceptin) can be of potential use in the treatment of prostate cancer overexpressing HER2, either alone or in combination with other drugs.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.085714,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.169014,
+        "rouge_l_f1": 0.140845
+      }
+    },
+    {
+      "question_id": "53137541e3eabad021000010",
+      "question_type": "list",
+      "question": "Which are the Yamanaka factors?",
+      "ranked_documents": [
+        {
+          "id": "19030024",
+          "title": "Yamanaka factors critically regulate the developmental signaling network in mouse embryonic stem cells.",
+          "score": 1.0,
+          "bm25_score": 19.987846,
+          "subword_cosine": 0.445619
+        },
+        {
+          "id": "24150221",
+          "title": "Reprogramming of MLL-AF9 leukemia cells into pluripotent stem cells.",
+          "score": 0.591618,
+          "bm25_score": 14.510047,
+          "subword_cosine": 0.173849
+        },
+        {
+          "id": "23704989",
+          "title": "Efficient generation of integration-free ips cells from human adult peripheral blood using BCL-XL together with Yamanaka factors.",
+          "score": 0.566224,
+          "bm25_score": 13.846816,
+          "subword_cosine": 0.167739
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "Yamanaka factors (Oct3/4, Sox2, Klf4, c-Myc) are highly expressed in embryonic stem (ES) cells, and their over-expression can induce pluripotency in both mouse and human somatic cells, indicating that these factors regulate the developmental signaling network necessary for ES cell pluripotency.",
+          "document_id": "19030024",
+          "state": "SUPPORT",
+          "overlap": 1.0,
+          "position": 0
+        },
+        {
+          "sentence": "However, systemic analysis of the signaling pathways regulated by Yamanaka factors has not yet been fully described.",
+          "document_id": "19030024",
+          "state": "SUPPORT",
+          "overlap": 1.0,
+          "position": 1
+        }
+      ],
+      "predicted_summary": "Yamanaka factors (Oct3/4, Sox2, Klf4, c-Myc) are highly expressed in embryonic stem (ES) cells, and their over-expression can induce pluripotency in both mouse and human somatic cells, indicating that these factors regulate the developmental signaling network necessary for ES cell pluripotency. However, systemic analysis of the signaling pathways regulated by Yamanaka factors has not yet been fully described.",
+      "short_answer": null,
+      "reference_summary": "The Yamanaka factors are the OCT4, SOX2, MYC, and KLF4 transcription factors",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.1875,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.253521,
+        "rouge_l_f1": 0.140845
+      }
+    },
+    {
+      "question_id": "515aa0abd24251bc050000a8",
+      "question_type": "summary",
+      "question": "What is the aim of the Human Chromosome-centric Proteome Project (C-HPP)?",
+      "ranked_documents": [
+        {
+          "id": "22443261",
+          "title": "Standard guidelines for the chromosome-centric human proteome project.",
+          "score": 0.962462,
+          "bm25_score": 49.578641,
+          "subword_cosine": 0.522931
+        },
+        {
+          "id": "23312004",
+          "title": "Identification of missing proteins in the neXtProt database and unregistered phosphopeptides in the PhosphoSitePlus database as part of the Chromosome-centric Human Proteome Project.",
+          "score": 0.929607,
+          "bm25_score": 45.035607,
+          "subword_cosine": 0.55485
+        },
+        {
+          "id": "23205526",
+          "title": "neXtProt: organizing protein knowledge in the context of human proteome projects.",
+          "score": 0.922174,
+          "bm25_score": 44.871076,
+          "subword_cosine": 0.546999
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "The objective of the international Chromosome-Centric Human Proteome Project (C-HPP) is to map and annotate all proteins encoded by the genes on each human chromosome.",
+          "document_id": "22443261",
+          "state": "SUPPORT",
+          "overlap": 0.833333,
+          "position": 0
+        },
+        {
+          "sentence": "The C-HPP consortium was established to organize a collaborative network among the research teams responsible for protein mapping of individual chromosomes and to identify compelling biological and genetic mechanisms influencing colocated genes and their protein products.",
+          "document_id": "22443261",
+          "state": "SUPPORT",
+          "overlap": 0.166667,
+          "position": 1
+        }
+      ],
+      "predicted_summary": "The objective of the international Chromosome-Centric Human Proteome Project (C-HPP) is to map and annotate all proteins encoded by the genes on each human chromosome. The C-HPP consortium was established to organize a collaborative network among the research teams responsible for protein mapping of individual chromosomes and to identify compelling biological and genetic mechanisms influencing colocated genes and their protein products.",
+      "short_answer": null,
+      "reference_summary": "The chromosome-centric human proteome project aims to systematically map all human proteins, chromosome by chromosome, in a gene-centric manner through dedicated efforts from national and international teams The Chromosome-Centric Human Proteome Project (C-HPP) is an international effort for creating an annotated proteomic catalog for each chromosome. (PMID: 23312004) The chromosome-centric human proteome project aims to systematically map all human proteins, chromosome by chromosome, in a gene-centric manner through dedicated efforts from national and international teams. (PMID: 23308364) The Chromosome-centric Human Proteome Project (C-HPP) aims to systematically map the entire human proteome with the intent to enhance our understanding of human biology at the cellular level. (PMID: 23253012)",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.2,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.345238,
+        "rouge_l_f1": 0.22619
+      }
+    },
+    {
+      "question_id": "56af9f130a360a5e45000015",
+      "question_type": "factoid",
+      "question": "Where is the protein Pannexin1 located?",
+      "ranked_documents": [
+        {
+          "id": "25698922",
+          "title": "Pannexin2 oligomers localize in the membranes of endosomal vesicles in mammalian cells while Pannexin1 channels traffic to the plasma membrane.",
+          "score": 0.944459,
+          "bm25_score": 12.968904,
+          "subword_cosine": 0.478148
+        },
+        {
+          "id": "24194896",
+          "title": "Pannexin1 channel proteins in the zebrafish retina have shared and unique properties.",
+          "score": 0.898302,
+          "bm25_score": 13.783683,
+          "subword_cosine": 0.382084
+        },
+        {
+          "id": "19409451",
+          "title": "Pannexin1 in the outer retina of the zebrafish, Danio rerio.",
+          "score": 0.876214,
+          "bm25_score": 14.291872,
+          "subword_cosine": 0.330179
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "High levels of Panx2 mRNA and protein in the Central Nervous System (CNS) have been documented.",
+          "document_id": "25698922",
+          "state": "SUPPORT",
+          "overlap": 0.25,
+          "position": 3
+        },
+        {
+          "sentence": "Whereas Pannexin1 (Panx1) is fairly ubiquitous and Pannexin3 (Panx3) is found in skin and connective tissue, both are fully glycosylated, traffic to the plasma membrane and have functions correlated with extracellular ATP release.",
+          "document_id": "25698922",
+          "state": "SUPPORT",
+          "overlap": 0.25,
+          "position": 4
+        }
+      ],
+      "predicted_summary": "High levels of Panx2 mRNA and protein in the Central Nervous System (CNS) have been documented. Whereas Pannexin1 (Panx1) is fairly ubiquitous and Pannexin3 (Panx3) is found in skin and connective tissue, both are fully glycosylated, traffic to the plasma membrane and have functions correlated with extracellular ATP release.",
+      "short_answer": null,
+      "reference_summary": "The protein Pannexin1 is localized to the plasma membranes.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.3,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.241379,
+        "rouge_l_f1": 0.206897
+      }
+    },
+    {
+      "question_id": "5718bbb37de986d80d00000b",
+      "question_type": "list",
+      "question": "Which currently known mitochondrial diseases have been attributed to POLG mutations?",
+      "ranked_documents": [
+        {
+          "id": "20927567",
+          "title": "Mitochondrial DNA replication and disease: insights from DNA polymerase \u03b3 mutations.",
+          "score": 1.0,
+          "bm25_score": 33.859122,
+          "subword_cosine": 0.625955
+        },
+        {
+          "id": "22647225",
+          "title": "POLG mutations in Australian patients with mitochondrial disease.",
+          "score": 0.943481,
+          "bm25_score": 33.464455,
+          "subword_cosine": 0.548453
+        },
+        {
+          "id": "12825077",
+          "title": "Novel POLG mutations in progressive external ophthalmoplegia mimicking mitochondrial neurogastrointestinal encephalomyopathy.",
+          "score": 0.818502,
+          "bm25_score": 28.809344,
+          "subword_cosine": 0.481964
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "DNA polymerase \u03b3 (pol \u03b3), encoded by POLG, is responsible for replicating human mitochondrial DNA.",
+          "document_id": "20927567",
+          "state": "SUPPORT",
+          "overlap": 0.25,
+          "position": 0
+        },
+        {
+          "sentence": "About 150 mutations in the human POLG have been identified in patients with mitochondrial diseases such as Alpers syndrome, progressive external ophthalmoplegia, and ataxia-neuropathy syndromes.",
+          "document_id": "20927567",
+          "state": "SUPPORT",
+          "overlap": 0.625,
+          "position": 1
+        }
+      ],
+      "predicted_summary": "DNA polymerase \u03b3 (pol \u03b3), encoded by POLG, is responsible for replicating human mitochondrial DNA. About 150 mutations in the human POLG have been identified in patients with mitochondrial diseases such as Alpers syndrome, progressive external ophthalmoplegia, and ataxia-neuropathy syndromes.",
+      "short_answer": null,
+      "reference_summary": "Mutations in the POLG gene have emerged as one of the most common causes of inherited mitochondrial disease in children and adults. They are responsible for a heterogeneous group of at least 6 major phenotypes of neurodegenerative disease that include: 1) childhood Myocerebrohepatopathy Spectrum disorders (MCHS), 2) Alpers syndrome, 3) Ataxia Neuropathy Spectrum (ANS) disorders, 4) Myoclonus Epilepsy Myopathy Sensory Ataxia (MEMSA), 5) autosomal recessive Progressive External Ophthalmoplegia (arPEO), and 6) autosomal dominant Progressive External Ophthalmoplegia (adPEO). Mutations in the POLG gene have emerged as one of the most common causes of inherited mitochondrial disease in children and adults. They are responsible for a heterogeneous group of at least 6 major phenotypes of neurodegenerative disease that include: 1) childhood Myocerebrohepatopathy Spectrum disorders (MCHS), 2) Alpers syndrome, 3) Ataxia Neuropathy Spectrum (ANS) disorders, 4) Myoclonus Epilepsy Myopathy Sensory Ataxia (MEMSA), 5) autosomal recessive Progressive External Ophthalmoplegia (arPEO), and 6) autosomal dominant Progressive External Ophthalmoplegia (adPEO)",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 0.6,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.1875,
+        "rouge_l_f1": 0.15625
+      }
+    }
+  ]
+}

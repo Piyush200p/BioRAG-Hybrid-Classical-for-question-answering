@@ -1,0 +1,12 @@
+flowchart LR
+  A[(BioASQ-QA JSON)] --> B[Inspect + validate]
+  B --> C[Normalize + split by question ID]
+  C --> D[BM25 / TF-IDF]
+  C --> E[Distributional n-gram representation]
+  D --> F[Weighted hybrid rank]
+  E --> F
+  F --> G[Candidate documents + sentences]
+  G --> H[HMM / Viterbi evidence sequence]
+  H --> I[Extractive supported answer]
+  I --> J[Recall@k · MRR · F1 · ROUGE-L]
+  J --> K[Error + support analysis]

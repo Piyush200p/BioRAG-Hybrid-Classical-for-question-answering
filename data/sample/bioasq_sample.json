@@ -1,0 +1,78 @@
+[
+  {
+    "id": "sample-001",
+    "body": "What is the role of metformin in type 2 diabetes?",
+    "type": "summary",
+    "documents": [
+      {"id": "doc-metformin-1", "title": "Metformin and diabetes", "text": "Metformin is commonly used as a first-line treatment for type 2 diabetes. It reduces hepatic glucose production and can improve insulin sensitivity."},
+      {"id": "doc-metformin-2", "title": "Diabetes medicines", "text": "Lifestyle intervention is important in diabetes care. Some medicines can cause hypoglycemia, so treatment should be individualized."},
+      {"id": "doc-metformin-3", "title": "Metformin safety", "text": "Metformin is associated with gastrointestinal adverse effects. Kidney function should be considered when prescribing it."}
+    ],
+    "snippets": [
+      {"document": "doc-metformin-1", "text": "Metformin is commonly used as a first-line treatment for type 2 diabetes."},
+      {"document": "doc-metformin-1", "text": "It reduces hepatic glucose production and can improve insulin sensitivity."}
+    ],
+    "ideal_answer": "Metformin is commonly used as a first-line treatment for type 2 diabetes because it reduces hepatic glucose production and can improve insulin sensitivity.",
+    "exact_answer": []
+  },
+  {
+    "id": "sample-002",
+    "body": "Does vaccination reduce severe influenza outcomes?",
+    "type": "yesno",
+    "documents": [
+      {"id": "doc-flu-1", "title": "Influenza vaccination", "text": "Influenza vaccination reduces the risk of severe influenza outcomes in many populations. Effectiveness varies by season and strain."},
+      {"id": "doc-flu-2", "title": "Influenza symptoms", "text": "Influenza can cause fever, cough, and fatigue. Supportive care may be used for uncomplicated illness."}
+    ],
+    "snippets": [{"document": "doc-flu-1", "text": "Influenza vaccination reduces the risk of severe influenza outcomes in many populations."}],
+    "ideal_answer": "Yes, vaccination reduces the risk of severe influenza outcomes, although effectiveness varies by season and strain.",
+    "exact_answer": ["yes"]
+  },
+  {
+    "id": "sample-003",
+    "body": "Which vitamin is associated with scurvy prevention?",
+    "type": "factoid",
+    "documents": [
+      {"id": "doc-vitamin-1", "title": "Vitamin C", "text": "Vitamin C deficiency causes scurvy. Adequate vitamin C intake prevents scurvy."},
+      {"id": "doc-vitamin-2", "title": "Vitamin D", "text": "Vitamin D supports calcium homeostasis and bone health."}
+    ],
+    "snippets": [{"document": "doc-vitamin-1", "text": "Adequate vitamin C intake prevents scurvy."}],
+    "ideal_answer": "Vitamin C is associated with prevention of scurvy.",
+    "exact_answer": ["vitamin C"]
+  },
+  {
+    "id": "sample-004",
+    "body": "What is the main function of hemoglobin?",
+    "type": "factoid",
+    "documents": [
+      {"id": "doc-hemo-1", "title": "Hemoglobin", "text": "Hemoglobin is a protein in red blood cells that transports oxygen from the lungs to tissues."},
+      {"id": "doc-hemo-2", "title": "Platelets", "text": "Platelets participate in blood clotting and wound repair."}
+    ],
+    "snippets": [{"document": "doc-hemo-1", "text": "Hemoglobin transports oxygen from the lungs to tissues."}],
+    "ideal_answer": "Hemoglobin transports oxygen from the lungs to tissues.",
+    "exact_answer": ["oxygen transport"]
+  },
+  {
+    "id": "sample-005",
+    "body": "Which organ produces insulin?",
+    "type": "factoid",
+    "documents": [
+      {"id": "doc-insulin-1", "title": "Pancreas", "text": "The pancreas produces insulin in beta cells located in the islets of Langerhans."},
+      {"id": "doc-insulin-2", "title": "Liver", "text": "The liver stores glycogen and performs many metabolic functions."}
+    ],
+    "snippets": [{"document": "doc-insulin-1", "text": "The pancreas produces insulin in beta cells."}],
+    "ideal_answer": "The pancreas produces insulin in beta cells.",
+    "exact_answer": ["pancreas"]
+  },
+  {
+    "id": "sample-006",
+    "body": "Is anemia associated with reduced hemoglobin?",
+    "type": "yesno",
+    "documents": [
+      {"id": "doc-anemia-1", "title": "Anemia", "text": "Anemia is a condition in which the blood has a reduced capacity to carry oxygen, often because hemoglobin is reduced."},
+      {"id": "doc-anemia-2", "title": "White blood cells", "text": "White blood cells help protect the body against infection."}
+    ],
+    "snippets": [{"document": "doc-anemia-1", "text": "Anemia is often associated with reduced hemoglobin."}],
+    "ideal_answer": "Yes. Anemia is often associated with reduced hemoglobin and reduced oxygen-carrying capacity.",
+    "exact_answer": ["yes"]
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "question_file": "data/official/training11b.json",
+  "question_sha256": "6df656862ca860efc355c7805d07ddca700d64ecc3785c519a49afccaaeeac98",
+  "requested_pubmed_ids": 40221,
+  "retrieved_documents": 40160,
+  "corpus_sha256": "ec08b2c85da78c94d06a0b01b21b50c2d7d4ddce231edc7811b3062cc0a8cdb6",
+  "source": "NCBI PubMed E-utilities efetch",
+  "gold_snippets_indexed": false,
+  "split_seed": 17
+}

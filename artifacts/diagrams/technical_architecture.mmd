@@ -1,0 +1,12 @@
+flowchart TB
+  Q[BioASQ question + type] --> P[Validate + normalize + split]
+  C[(Abstract corpus)] --> P
+  P --> L[BM25 lexical index]
+  P --> S[Distributional n-gram vectors]
+  L --> F[Weighted hybrid retrieval]
+  S --> F
+  F --> H[HMM/Viterbi evidence selector]
+  H --> X[Extractive supported answer]
+  H -. planned .-> R[RNN/GRU summarizer]
+  X --> E[Recall@k, MRR, F1, ROUGE-L, support review]
+  R --> E

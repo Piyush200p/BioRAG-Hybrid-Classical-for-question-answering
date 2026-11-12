@@ -1,0 +1,7 @@
+# Evaluation-1 baseline: Python standard library only.
+# Optional neural upgrade (install deliberately after hardware/licence review):
+# torch
+# transformers
+# sentence-transformers
+# faiss-cpu
+# python-pptx

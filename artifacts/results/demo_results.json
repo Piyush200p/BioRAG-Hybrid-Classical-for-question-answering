@@ -1,0 +1,342 @@
+{
+  "status": "executed",
+  "data_path": "data/sample/bioasq_sample.json",
+  "record_count": 6,
+  "corpus_count": 13,
+  "lexical_weight": 0.6,
+  "selector": "hmm",
+  "input_sha256": "5aaa404743fc0ab769ca33982efe566926b931dccdd0fd9b96a5aec7546b2d71",
+  "evidence_note": "Candidate HMM states and verbatim extraction do not certify biomedical entailment. Short-answer generation and official BioASQ scoring remain pending.",
+  "aggregate_metrics": {
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0,
+    "summary_token_f1": 0.443306,
+    "rouge_l_f1": 0.429417
+  },
+  "records": [
+    {
+      "question_id": "sample-001",
+      "question_type": "summary",
+      "question": "What is the role of metformin in type 2 diabetes?",
+      "ranked_documents": [
+        {
+          "id": "doc-metformin-1",
+          "title": "Metformin and diabetes",
+          "score": 1.0,
+          "bm25_score": 7.929749,
+          "subword_cosine": 0.609569
+        },
+        {
+          "id": "doc-metformin-3",
+          "title": "Metformin safety",
+          "score": 0.393798,
+          "bm25_score": 2.359304,
+          "subword_cosine": 0.328074
+        },
+        {
+          "id": "doc-metformin-2",
+          "title": "Diabetes medicines",
+          "score": 0.375472,
+          "bm25_score": 2.23892,
+          "subword_cosine": 0.314028
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "Metformin is commonly used as a first-line treatment for type 2 diabetes.",
+          "document_id": "doc-metformin-1",
+          "state": "SUPPORT",
+          "overlap": 0.8,
+          "position": 0
+        },
+        {
+          "sentence": "Metformin is associated with gastrointestinal adverse effects.",
+          "document_id": "doc-metformin-3",
+          "state": "SUPPORT",
+          "overlap": 0.2,
+          "position": 0
+        }
+      ],
+      "predicted_summary": "Metformin is commonly used as a first-line treatment for type 2 diabetes. Metformin is associated with gastrointestinal adverse effects.",
+      "short_answer": null,
+      "reference_summary": "Metformin is commonly used as a first-line treatment for type 2 diabetes because it reduces hepatic glucose production and can improve insulin sensitivity.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.571429,
+        "rouge_l_f1": 0.571429
+      }
+    },
+    {
+      "question_id": "sample-002",
+      "question_type": "yesno",
+      "question": "Does vaccination reduce severe influenza outcomes?",
+      "ranked_documents": [
+        {
+          "id": "doc-flu-1",
+          "title": "Influenza vaccination",
+          "score": 1.0,
+          "bm25_score": 9.761744,
+          "subword_cosine": 0.810163
+        },
+        {
+          "id": "doc-flu-2",
+          "title": "Influenza symptoms",
+          "score": 0.308592,
+          "bm25_score": 2.359304,
+          "subword_cosine": 0.342104
+        },
+        {
+          "id": "doc-anemia-1",
+          "title": "Anemia",
+          "score": 0.092586,
+          "bm25_score": 0.0,
+          "subword_cosine": 0.201556
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "Influenza vaccination reduces the risk of severe influenza outcomes in many populations.",
+          "document_id": "doc-flu-1",
+          "state": "SUPPORT",
+          "overlap": 0.8,
+          "position": 0
+        },
+        {
+          "sentence": "Influenza can cause fever, cough, and fatigue.",
+          "document_id": "doc-flu-2",
+          "state": "SUPPORT",
+          "overlap": 0.2,
+          "position": 0
+        }
+      ],
+      "predicted_summary": "Influenza vaccination reduces the risk of severe influenza outcomes in many populations. Influenza can cause fever, cough, and fatigue.",
+      "short_answer": null,
+      "reference_summary": "Yes, vaccination reduces the risk of severe influenza outcomes, although effectiveness varies by season and strain.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.514286,
+        "rouge_l_f1": 0.514286
+      }
+    },
+    {
+      "question_id": "sample-003",
+      "question_type": "factoid",
+      "question": "Which vitamin is associated with scurvy prevention?",
+      "ranked_documents": [
+        {
+          "id": "doc-vitamin-1",
+          "title": "Vitamin C",
+          "score": 1.0,
+          "bm25_score": 5.836926,
+          "subword_cosine": 0.601521
+        },
+        {
+          "id": "doc-vitamin-2",
+          "title": "Vitamin D",
+          "score": 0.451842,
+          "bm25_score": 2.643586,
+          "subword_cosine": 0.29554
+        },
+        {
+          "id": "doc-metformin-3",
+          "title": "Metformin safety",
+          "score": 0.404519,
+          "bm25_score": 2.106362,
+          "subword_cosine": 0.306534
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "Vitamin C deficiency causes scurvy.",
+          "document_id": "doc-vitamin-1",
+          "state": "SUPPORT",
+          "overlap": 0.5,
+          "position": 0
+        },
+        {
+          "sentence": "Adequate vitamin C intake prevents scurvy.",
+          "document_id": "doc-vitamin-1",
+          "state": "SUPPORT",
+          "overlap": 0.5,
+          "position": 1
+        }
+      ],
+      "predicted_summary": "Vitamin C deficiency causes scurvy. Adequate vitamin C intake prevents scurvy.",
+      "short_answer": null,
+      "reference_summary": "Vitamin C is associated with prevention of scurvy.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.315789,
+        "rouge_l_f1": 0.315789
+      }
+    },
+    {
+      "question_id": "sample-004",
+      "question_type": "factoid",
+      "question": "What is the main function of hemoglobin?",
+      "ranked_documents": [
+        {
+          "id": "doc-hemo-1",
+          "title": "Hemoglobin",
+          "score": 1.0,
+          "bm25_score": 2.566281,
+          "subword_cosine": 0.510754
+        },
+        {
+          "id": "doc-metformin-3",
+          "title": "Metformin safety",
+          "score": 0.675445,
+          "bm25_score": 2.106362,
+          "subword_cosine": 0.233638
+        },
+        {
+          "id": "doc-anemia-1",
+          "title": "Anemia",
+          "score": 0.629678,
+          "bm25_score": 1.754561,
+          "subword_cosine": 0.280224
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "Hemoglobin is a protein in red blood cells that transports oxygen from the lungs to tissues.",
+          "document_id": "doc-hemo-1",
+          "state": "SUPPORT",
+          "overlap": 0.333333,
+          "position": 0
+        },
+        {
+          "sentence": "Kidney function should be considered when prescribing it.",
+          "document_id": "doc-metformin-3",
+          "state": "SUPPORT",
+          "overlap": 0.333333,
+          "position": 1
+        }
+      ],
+      "predicted_summary": "Hemoglobin is a protein in red blood cells that transports oxygen from the lungs to tissues. Kidney function should be considered when prescribing it.",
+      "short_answer": null,
+      "reference_summary": "Hemoglobin transports oxygen from the lungs to tissues.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.5,
+        "rouge_l_f1": 0.5
+      }
+    },
+    {
+      "question_id": "sample-005",
+      "question_type": "factoid",
+      "question": "Which organ produces insulin?",
+      "ranked_documents": [
+        {
+          "id": "doc-insulin-1",
+          "title": "Pancreas",
+          "score": 1.0,
+          "bm25_score": 4.379625,
+          "subword_cosine": 0.377366
+        },
+        {
+          "id": "doc-metformin-1",
+          "title": "Metformin and diabetes",
+          "score": 0.589164,
+          "bm25_score": 1.415062,
+          "subword_cosine": 0.372935
+        },
+        {
+          "id": "doc-flu-1",
+          "title": "Influenza vaccination",
+          "score": 0.159798,
+          "bm25_score": 0.0,
+          "subword_cosine": 0.150756
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "The pancreas produces insulin in beta cells located in the islets of Langerhans.",
+          "document_id": "doc-insulin-1",
+          "state": "SUPPORT",
+          "overlap": 0.666667,
+          "position": 0
+        },
+        {
+          "sentence": "It reduces hepatic glucose production and can improve insulin sensitivity.",
+          "document_id": "doc-metformin-1",
+          "state": "SUPPORT",
+          "overlap": 0.333333,
+          "position": 1
+        }
+      ],
+      "predicted_summary": "The pancreas produces insulin in beta cells located in the islets of Langerhans. It reduces hepatic glucose production and can improve insulin sensitivity.",
+      "short_answer": null,
+      "reference_summary": "The pancreas produces insulin in beta cells.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.466667,
+        "rouge_l_f1": 0.466667
+      }
+    },
+    {
+      "question_id": "sample-006",
+      "question_type": "yesno",
+      "question": "Is anemia associated with reduced hemoglobin?",
+      "ranked_documents": [
+        {
+          "id": "doc-anemia-1",
+          "title": "Anemia",
+          "score": 1.0,
+          "bm25_score": 8.219937,
+          "subword_cosine": 0.629844
+        },
+        {
+          "id": "doc-hemo-1",
+          "title": "Hemoglobin",
+          "score": 0.467116,
+          "bm25_score": 2.566281,
+          "subword_cosine": 0.440567
+        },
+        {
+          "id": "doc-metformin-3",
+          "title": "Metformin safety",
+          "score": 0.314425,
+          "bm25_score": 2.106362,
+          "subword_cosine": 0.253
+        }
+      ],
+      "selected_evidence": [
+        {
+          "sentence": "Anemia is a condition in which the blood has a reduced capacity to carry oxygen, often because hemoglobin is reduced.",
+          "document_id": "doc-anemia-1",
+          "state": "SUPPORT",
+          "overlap": 0.75,
+          "position": 0
+        },
+        {
+          "sentence": "Hemoglobin is a protein in red blood cells that transports oxygen from the lungs to tissues.",
+          "document_id": "doc-hemo-1",
+          "state": "SUPPORT",
+          "overlap": 0.25,
+          "position": 0
+        }
+      ],
+      "predicted_summary": "Anemia is a condition in which the blood has a reduced capacity to carry oxygen, often because hemoglobin is reduced. Hemoglobin is a protein in red blood cells that transports oxygen from the lungs to tissues.",
+      "short_answer": null,
+      "reference_summary": "Yes. Anemia is often associated with reduced hemoglobin and reduced oxygen-carrying capacity.",
+      "status": "candidate_evidence",
+      "metrics": {
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "summary_token_f1": 0.291667,
+        "rouge_l_f1": 0.208333
+      }
+    }
+  ]
+}
