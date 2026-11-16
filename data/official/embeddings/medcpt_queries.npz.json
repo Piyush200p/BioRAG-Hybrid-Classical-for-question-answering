@@ -1,0 +1,15 @@
+{
+  "model_key": "medcpt-query",
+  "model_name": "ncbi/MedCPT-Query-Encoder",
+  "model_revision": "d83a36cc6b8e3a5c5e9d9d6ba156808c1643dcbc",
+  "kind": "questions",
+  "pooling": "cls",
+  "normalized": true,
+  "max_length": 64,
+  "dimension": 768,
+  "count": 4719,
+  "input_path": "/kaggle/working/biorag_project/biorag_kaggle_bundle/data/official/training11b.json",
+  "input_sha256": "3cede60c1b21b55797630766e4c0bedb9dcfd70b87d126e4d46947e695a2718e",
+  "cache_sha256": "f495c37d137ecbff88186a406a9a88b609e736ac1fce0395aca3d5ac1ae148b0",
+  "format": "NumPy NPZ: ids (unicode), vectors (float32)"
+}

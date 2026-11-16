@@ -33,3 +33,8 @@ Thumbs.db
 build/
 dist/
 
+# Generated model caches can be hundreds of MB; retain the README and metadata
+# contract, but keep vectors out of source control.
+data/official/embeddings/*.npz
+data/official/embeddings/*.npz.json
+

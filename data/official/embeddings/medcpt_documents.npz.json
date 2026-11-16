@@ -1,0 +1,15 @@
+{
+  "model_key": "medcpt-article",
+  "model_name": "ncbi/MedCPT-Article-Encoder",
+  "model_revision": "d05a736da4bb84ee4057b7f7999485be6ed85465",
+  "kind": "documents",
+  "pooling": "cls",
+  "normalized": true,
+  "max_length": 512,
+  "dimension": 768,
+  "count": 40160,
+  "input_path": "/kaggle/working/biorag_project/biorag_kaggle_bundle/data/official/pubmed_abstracts.json",
+  "input_sha256": "1b4083b84335401c5ff4b15bc27f4ddcd6568a23300034127f0467a69f74b4d9",
+  "cache_sha256": "35c073d543f3de2c92c98701f1522ea6a3991b32658d63e97a1b07debf2bfbc2",
+  "format": "NumPy NPZ: ids (unicode), vectors (float32)"
+}

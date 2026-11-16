@@ -1,0 +1,15 @@
+{
+  "model_key": "biobert",
+  "model_name": "dmis-lab/biobert-base-cased-v1.2",
+  "model_revision": "67c9c25b46986521ca33df05d8540da1210b3256",
+  "kind": "documents",
+  "pooling": "masked_mean",
+  "normalized": true,
+  "max_length": 512,
+  "dimension": 768,
+  "count": 40160,
+  "input_path": "/kaggle/working/biorag_project/biorag_kaggle_bundle/data/official/pubmed_abstracts.json",
+  "input_sha256": "1b4083b84335401c5ff4b15bc27f4ddcd6568a23300034127f0467a69f74b4d9",
+  "cache_sha256": "1be1dd1dce40543699f820dac52ecb8af7eab3a5aee50a7bbc9e31018775ca04",
+  "format": "NumPy NPZ: ids (unicode), vectors (float32)"
+}

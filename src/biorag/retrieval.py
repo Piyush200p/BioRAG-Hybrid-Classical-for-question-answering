@@ -40,23 +40,24 @@ class HybridRetriever:
     Planned CBOW/Skip-gram vectors will replace it for the semantic experiment.
     """
 
-    def __init__(self, documents: list[Document], lexical_weight: float = 0.6, semantic_weight: float = 0.4):
+    def __init__(self, documents: list[Document], lexical_weight: float = 0.6, semantic_weight: float = 0.4, include_subword: bool = True):
         if lexical_weight < 0 or semantic_weight < 0 or not math.isclose(lexical_weight + semantic_weight, 1.0):
             raise ValueError("Retrieval weights must be nonnegative and sum to 1")
         self.documents = documents
         self.lexical_weight = lexical_weight
         self.semantic_weight = semantic_weight
         self._tokens = [tokenize(doc.title + " " + doc.text) for doc in documents]
+        self._term_frequencies = [Counter(tokens) for tokens in self._tokens]
         self._lengths = [len(tokens) for tokens in self._tokens]
         self._average_length = sum(self._lengths) / max(1, len(self._lengths))
         self._df: Counter[str] = Counter()
         for tokens in self._tokens:
             self._df.update(set(tokens))
-        self._vectors = [Counter(character_ngrams(tokens)) for tokens in self._tokens]
+        self._vectors = [Counter(character_ngrams(tokens)) for tokens in self._tokens] if include_subword else []
 
     def _bm25(self, query_tokens: list[str], index: int) -> float:
         k1, b = 1.5, 0.75
-        counts = Counter(self._tokens[index])
+        counts = self._term_frequencies[index]
         score = 0.0
         total_docs = len(self.documents)
         for term in query_tokens:
@@ -85,7 +86,7 @@ class HybridRetriever:
             raise ValueError("top_k must be positive")
         query_vector = Counter(character_ngrams(query_tokens))
         lexical = [self._bm25(query_tokens, index) for index in range(len(self.documents))]
-        semantic = [_cosine(query_vector, vector) for vector in self._vectors]
+        semantic = [_cosine(query_vector, vector) for vector in self._vectors] if self._vectors else [0.0] * len(self.documents)
         lexical_norm = self._minmax(lexical)
         semantic_norm = self._minmax(semantic)
         results = []
@@ -98,3 +99,12 @@ class HybridRetriever:
             results.append(RetrievalResult(document.doc_id, document.title, document.text, score, lexical[index], semantic[index]))
         results.sort(key=lambda item: (-item.score, -item.lexical_score, item.doc_id))
         return results[: max(0, top_k)]
+
+    def bm25_scores(self, query: str) -> list[float]:
+        """Return raw BM25 scores aligned to ``self.documents``.
+
+        Exposed for controlled retrieval ablations and score fusion. The normal
+        ``search`` API and its existing weighted behavior remain unchanged.
+        """
+        query_tokens = tokenize(query)
+        return [self._bm25(query_tokens, index) for index in range(len(self.documents))]

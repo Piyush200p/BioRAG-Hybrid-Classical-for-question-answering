@@ -5,7 +5,10 @@ import itertools
 import math
 from pathlib import Path
 
+import numpy as np
+
 from biorag.data import load_questions
+from biorag.dense_retrieval import EmbeddingCache, cosine_scores, minmax, ranked_ids
 from biorag.hmm import EvidenceHMM
 from biorag.metrics import recall_at_k, rouge_l
 from biorag.retrieval import HybridRetriever
@@ -48,6 +51,22 @@ class BioRAGPipelineTests(unittest.TestCase):
         question = load_questions(FIXTURE)[0]
         result = HybridRetriever(question.documents).search(question.body, top_k=1)
         self.assertEqual(result[0].doc_id, "doc-metformin-1")
+
+    def test_dense_cache_alignment_and_cosine_scoring(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "vectors.npz"
+            np.savez(path, ids=np.asarray(["b", "a"]), vectors=np.asarray([[0, 1], [1, 0]], dtype=np.float32))
+            path.with_suffix(".npz.json").write_text(json.dumps({"kind": "documents"}), encoding="utf-8")
+            cache = EmbeddingCache.load(path)
+            aligned = cache.aligned(["a", "b"])
+            np.testing.assert_array_equal(aligned, [[1, 0], [0, 1]])
+            np.testing.assert_allclose(cosine_scores(np.asarray([1, 0]), aligned), [1, 0])
+            with self.assertRaisesRegex(ValueError, "missing"):
+                cache.aligned(["missing"])
+
+    def test_dense_ranking_helpers_handle_constant_and_tied_scores(self):
+        np.testing.assert_array_equal(minmax(np.asarray([0.0, 0.0])), [0.0, 0.0])
+        self.assertEqual(ranked_ids(np.asarray([0.5, 0.5]), ["b", "a"], 2), ["a", "b"])
 
     def test_hmm_returns_supporting_evidence(self):
         selected = EvidenceHMM().select(

@@ -1,0 +1,15 @@
+{
+  "model_key": "biobert",
+  "model_name": "dmis-lab/biobert-base-cased-v1.2",
+  "model_revision": "67c9c25b46986521ca33df05d8540da1210b3256",
+  "kind": "questions",
+  "pooling": "masked_mean",
+  "normalized": true,
+  "max_length": 64,
+  "dimension": 768,
+  "count": 4719,
+  "input_path": "/kaggle/working/biorag_project/biorag_kaggle_bundle/data/official/training11b.json",
+  "input_sha256": "3cede60c1b21b55797630766e4c0bedb9dcfd70b87d126e4d46947e695a2718e",
+  "cache_sha256": "fe536ea221ec6d0bbb8b81e01febfd35dd53daaf0b136d2d561eeec921270439",
+  "format": "NumPy NPZ: ids (unicode), vectors (float32)"
+}

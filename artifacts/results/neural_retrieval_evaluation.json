@@ -1,0 +1,764 @@
+{
+  "protocol": {
+    "questions_sha256": "3cede60c1b21b55797630766e4c0bedb9dcfd70b87d126e4d46947e695a2718e",
+    "corpus_sha256": "1b4083b84335401c5ff4b15bc27f4ddcd6568a23300034127f0467a69f74b4d9",
+    "split_sha256": "1576d5b0f0380e72a494c1dd2d742f259a6585b2668cc1819c4a1277c38f6432",
+    "top_k": 10,
+    "validation_objective": "mean MRR@10",
+    "weight_step": 0.05,
+    "test_used_for_tuning": false,
+    "gold_relevance_scope": "gold document IDs present in the searchable PubMed corpus"
+  },
+  "cache_metadata": {
+    "biobert": {
+      "documents": {
+        "model_key": "biobert",
+        "model_name": "dmis-lab/biobert-base-cased-v1.2",
+        "model_revision": "67c9c25b46986521ca33df05d8540da1210b3256",
+        "kind": "documents",
+        "pooling": "masked_mean",
+        "normalized": true,
+        "max_length": 512,
+        "dimension": 768,
+        "count": 40160,
+        "input_path": "/kaggle/working/biorag_project/biorag_kaggle_bundle/data/official/pubmed_abstracts.json",
+        "input_sha256": "1b4083b84335401c5ff4b15bc27f4ddcd6568a23300034127f0467a69f74b4d9",
+        "cache_sha256": "1be1dd1dce40543699f820dac52ecb8af7eab3a5aee50a7bbc9e31018775ca04",
+        "format": "NumPy NPZ: ids (unicode), vectors (float32)"
+      },
+      "queries": {
+        "model_key": "biobert",
+        "model_name": "dmis-lab/biobert-base-cased-v1.2",
+        "model_revision": "67c9c25b46986521ca33df05d8540da1210b3256",
+        "kind": "questions",
+        "pooling": "masked_mean",
+        "normalized": true,
+        "max_length": 64,
+        "dimension": 768,
+        "count": 4719,
+        "input_path": "/kaggle/working/biorag_project/biorag_kaggle_bundle/data/official/training11b.json",
+        "input_sha256": "3cede60c1b21b55797630766e4c0bedb9dcfd70b87d126e4d46947e695a2718e",
+        "cache_sha256": "fe536ea221ec6d0bbb8b81e01febfd35dd53daaf0b136d2d561eeec921270439",
+        "format": "NumPy NPZ: ids (unicode), vectors (float32)"
+      }
+    },
+    "medcpt": {
+      "documents": {
+        "model_key": "medcpt-article",
+        "model_name": "ncbi/MedCPT-Article-Encoder",
+        "model_revision": "d05a736da4bb84ee4057b7f7999485be6ed85465",
+        "kind": "documents",
+        "pooling": "cls",
+        "normalized": true,
+        "max_length": 512,
+        "dimension": 768,
+        "count": 40160,
+        "input_path": "/kaggle/working/biorag_project/biorag_kaggle_bundle/data/official/pubmed_abstracts.json",
+        "input_sha256": "1b4083b84335401c5ff4b15bc27f4ddcd6568a23300034127f0467a69f74b4d9",
+        "cache_sha256": "35c073d543f3de2c92c98701f1522ea6a3991b32658d63e97a1b07debf2bfbc2",
+        "format": "NumPy NPZ: ids (unicode), vectors (float32)"
+      },
+      "queries": {
+        "model_key": "medcpt-query",
+        "model_name": "ncbi/MedCPT-Query-Encoder",
+        "model_revision": "d83a36cc6b8e3a5c5e9d9d6ba156808c1643dcbc",
+        "kind": "questions",
+        "pooling": "cls",
+        "normalized": true,
+        "max_length": 64,
+        "dimension": 768,
+        "count": 4719,
+        "input_path": "/kaggle/working/biorag_project/biorag_kaggle_bundle/data/official/training11b.json",
+        "input_sha256": "3cede60c1b21b55797630766e4c0bedb9dcfd70b87d126e4d46947e695a2718e",
+        "cache_sha256": "f495c37d137ecbff88186a406a9a88b609e736ac1fce0395aca3d5ac1ae148b0",
+        "format": "NumPy NPZ: ids (unicode), vectors (float32)"
+      }
+    }
+  },
+  "baselines": {
+    "bm25_validation": {
+      "overall": {
+        "recall@10": 0.707103,
+        "mrr@10": 0.86106,
+        "question_count": 506,
+        "unavailable_gold_document_references": 7
+      },
+      "by_question_type": {
+        "factoid": {
+          "recall@10": 0.704667,
+          "mrr@10": 0.831831,
+          "question_count": 173,
+          "unavailable_gold_document_references": 1
+        },
+        "list": {
+          "recall@10": 0.643976,
+          "mrr@10": 0.829095,
+          "question_count": 100,
+          "unavailable_gold_document_references": 1
+        },
+        "summary": {
+          "recall@10": 0.721019,
+          "mrr@10": 0.896566,
+          "question_count": 104,
+          "unavailable_gold_document_references": 3
+        },
+        "yesno": {
+          "recall@10": 0.748087,
+          "mrr@10": 0.896413,
+          "question_count": 129,
+          "unavailable_gold_document_references": 2
+        }
+      },
+      "split": "validation"
+    },
+    "bm25_test": {
+      "overall": {
+        "recall@10": 0.712239,
+        "mrr@10": 0.904948,
+        "question_count": 501,
+        "unavailable_gold_document_references": 5
+      },
+      "by_question_type": {
+        "factoid": {
+          "recall@10": 0.717582,
+          "mrr@10": 0.886385,
+          "question_count": 142,
+          "unavailable_gold_document_references": 1
+        },
+        "list": {
+          "recall@10": 0.645015,
+          "mrr@10": 0.946769,
+          "question_count": 98,
+          "unavailable_gold_document_references": 2
+        },
+        "summary": {
+          "recall@10": 0.761292,
+          "mrr@10": 0.931352,
+          "question_count": 134,
+          "unavailable_gold_document_references": 1
+        },
+        "yesno": {
+          "recall@10": 0.706383,
+          "mrr@10": 0.865573,
+          "question_count": 127,
+          "unavailable_gold_document_references": 1
+        }
+      },
+      "split": "test"
+    },
+    "biobert_validation": {
+      "overall": {
+        "recall@10": 0.059304,
+        "mrr@10": 0.143183,
+        "question_count": 506,
+        "unavailable_gold_document_references": 7
+      },
+      "by_question_type": {
+        "factoid": {
+          "recall@10": 0.038642,
+          "mrr@10": 0.096362,
+          "question_count": 173,
+          "unavailable_gold_document_references": 1
+        },
+        "list": {
+          "recall@10": 0.040722,
+          "mrr@10": 0.132679,
+          "question_count": 100,
+          "unavailable_gold_document_references": 1
+        },
+        "summary": {
+          "recall@10": 0.054345,
+          "mrr@10": 0.155128,
+          "question_count": 104,
+          "unavailable_gold_document_references": 3
+        },
+        "yesno": {
+          "recall@10": 0.105414,
+          "mrr@10": 0.204488,
+          "question_count": 129,
+          "unavailable_gold_document_references": 2
+        }
+      },
+      "split": "validation"
+    },
+    "biobert_test": {
+      "overall": {
+        "recall@10": 0.08362,
+        "mrr@10": 0.164718,
+        "question_count": 501,
+        "unavailable_gold_document_references": 5
+      },
+      "by_question_type": {
+        "factoid": {
+          "recall@10": 0.090243,
+          "mrr@10": 0.151319,
+          "question_count": 142,
+          "unavailable_gold_document_references": 1
+        },
+        "list": {
+          "recall@10": 0.084958,
+          "mrr@10": 0.186702,
+          "question_count": 98,
+          "unavailable_gold_document_references": 2
+        },
+        "summary": {
+          "recall@10": 0.048921,
+          "mrr@10": 0.110537,
+          "question_count": 134,
+          "unavailable_gold_document_references": 1
+        },
+        "yesno": {
+          "recall@10": 0.111793,
+          "mrr@10": 0.219904,
+          "question_count": 127,
+          "unavailable_gold_document_references": 1
+        }
+      },
+      "split": "test"
+    },
+    "medcpt_validation": {
+      "overall": {
+        "recall@10": 0.613889,
+        "mrr@10": 0.78238,
+        "question_count": 506,
+        "unavailable_gold_document_references": 7
+      },
+      "by_question_type": {
+        "factoid": {
+          "recall@10": 0.61743,
+          "mrr@10": 0.752062,
+          "question_count": 173,
+          "unavailable_gold_document_references": 1
+        },
+        "list": {
+          "recall@10": 0.467667,
+          "mrr@10": 0.705667,
+          "question_count": 100,
+          "unavailable_gold_document_references": 1
+        },
+        "summary": {
+          "recall@10": 0.65332,
+          "mrr@10": 0.820139,
+          "question_count": 104,
+          "unavailable_gold_document_references": 3
+        },
+        "yesno": {
+          "recall@10": 0.6907,
+          "mrr@10": 0.852067,
+          "question_count": 129,
+          "unavailable_gold_document_references": 2
+        }
+      },
+      "split": "validation"
+    },
+    "medcpt_test": {
+      "overall": {
+        "recall@10": 0.629546,
+        "mrr@10": 0.796467,
+        "question_count": 501,
+        "unavailable_gold_document_references": 5
+      },
+      "by_question_type": {
+        "factoid": {
+          "recall@10": 0.608107,
+          "mrr@10": 0.752834,
+          "question_count": 142,
+          "unavailable_gold_document_references": 1
+        },
+        "list": {
+          "recall@10": 0.515029,
+          "mrr@10": 0.73533,
+          "question_count": 98,
+          "unavailable_gold_document_references": 2
+        },
+        "summary": {
+          "recall@10": 0.667183,
+          "mrr@10": 0.831633,
+          "question_count": 134,
+          "unavailable_gold_document_references": 1
+        },
+        "yesno": {
+          "recall@10": 0.702174,
+          "mrr@10": 0.855324,
+          "question_count": 127,
+          "unavailable_gold_document_references": 1
+        }
+      },
+      "split": "test"
+    }
+  },
+  "selected_hybrid_weights": {
+    "biobert": {
+      "dense_weight": 0.55,
+      "validation_trials": [
+        {
+          "dense_weight": 0.0,
+          "metrics": {
+            "recall@10": 0.707103,
+            "mrr@10": 0.86106,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.05,
+          "metrics": {
+            "recall@10": 0.706883,
+            "mrr@10": 0.861549,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.1,
+          "metrics": {
+            "recall@10": 0.705953,
+            "mrr@10": 0.862306,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.15,
+          "metrics": {
+            "recall@10": 0.705637,
+            "mrr@10": 0.862522,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.2,
+          "metrics": {
+            "recall@10": 0.705803,
+            "mrr@10": 0.861509,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.25,
+          "metrics": {
+            "recall@10": 0.704432,
+            "mrr@10": 0.861599,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.3,
+          "metrics": {
+            "recall@10": 0.70134,
+            "mrr@10": 0.863391,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.35,
+          "metrics": {
+            "recall@10": 0.701687,
+            "mrr@10": 0.864443,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.4,
+          "metrics": {
+            "recall@10": 0.700273,
+            "mrr@10": 0.864294,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.45,
+          "metrics": {
+            "recall@10": 0.700174,
+            "mrr@10": 0.861656,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.5,
+          "metrics": {
+            "recall@10": 0.696398,
+            "mrr@10": 0.86198,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.55,
+          "metrics": {
+            "recall@10": 0.69282,
+            "mrr@10": 0.866309,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.6,
+          "metrics": {
+            "recall@10": 0.689319,
+            "mrr@10": 0.863392,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.65,
+          "metrics": {
+            "recall@10": 0.681448,
+            "mrr@10": 0.85897,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.7,
+          "metrics": {
+            "recall@10": 0.662993,
+            "mrr@10": 0.853647,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.75,
+          "metrics": {
+            "recall@10": 0.639684,
+            "mrr@10": 0.84468,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.8,
+          "metrics": {
+            "recall@10": 0.59694,
+            "mrr@10": 0.815685,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.85,
+          "metrics": {
+            "recall@10": 0.52457,
+            "mrr@10": 0.750225,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.9,
+          "metrics": {
+            "recall@10": 0.404264,
+            "mrr@10": 0.596877,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.95,
+          "metrics": {
+            "recall@10": 0.201976,
+            "mrr@10": 0.352463,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 1.0,
+          "metrics": {
+            "recall@10": 0.059304,
+            "mrr@10": 0.143183,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        }
+      ],
+      "validation_metrics": {
+        "recall@10": 0.69282,
+        "mrr@10": 0.866309,
+        "question_count": 506,
+        "unavailable_gold_document_references": 7
+      }
+    },
+    "medcpt": {
+      "dense_weight": 0.65,
+      "validation_trials": [
+        {
+          "dense_weight": 0.0,
+          "metrics": {
+            "recall@10": 0.707103,
+            "mrr@10": 0.86106,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.05,
+          "metrics": {
+            "recall@10": 0.712783,
+            "mrr@10": 0.861667,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.1,
+          "metrics": {
+            "recall@10": 0.717531,
+            "mrr@10": 0.864909,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.15,
+          "metrics": {
+            "recall@10": 0.720499,
+            "mrr@10": 0.866624,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.2,
+          "metrics": {
+            "recall@10": 0.722986,
+            "mrr@10": 0.868339,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.25,
+          "metrics": {
+            "recall@10": 0.72647,
+            "mrr@10": 0.872428,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.3,
+          "metrics": {
+            "recall@10": 0.727471,
+            "mrr@10": 0.874091,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.35,
+          "metrics": {
+            "recall@10": 0.730126,
+            "mrr@10": 0.876676,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.4,
+          "metrics": {
+            "recall@10": 0.732178,
+            "mrr@10": 0.882152,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.45,
+          "metrics": {
+            "recall@10": 0.735114,
+            "mrr@10": 0.886166,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.5,
+          "metrics": {
+            "recall@10": 0.734959,
+            "mrr@10": 0.892264,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.55,
+          "metrics": {
+            "recall@10": 0.734234,
+            "mrr@10": 0.894318,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.6,
+          "metrics": {
+            "recall@10": 0.736318,
+            "mrr@10": 0.894889,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.65,
+          "metrics": {
+            "recall@10": 0.737592,
+            "mrr@10": 0.895822,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.7,
+          "metrics": {
+            "recall@10": 0.735367,
+            "mrr@10": 0.892677,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.75,
+          "metrics": {
+            "recall@10": 0.727842,
+            "mrr@10": 0.893274,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.8,
+          "metrics": {
+            "recall@10": 0.721296,
+            "mrr@10": 0.889697,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.85,
+          "metrics": {
+            "recall@10": 0.710777,
+            "mrr@10": 0.878874,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.9,
+          "metrics": {
+            "recall@10": 0.697331,
+            "mrr@10": 0.862538,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 0.95,
+          "metrics": {
+            "recall@10": 0.658418,
+            "mrr@10": 0.828,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        },
+        {
+          "dense_weight": 1.0,
+          "metrics": {
+            "recall@10": 0.613889,
+            "mrr@10": 0.78238,
+            "question_count": 506,
+            "unavailable_gold_document_references": 7
+          }
+        }
+      ],
+      "validation_metrics": {
+        "recall@10": 0.737592,
+        "mrr@10": 0.895822,
+        "question_count": 506,
+        "unavailable_gold_document_references": 7
+      }
+    }
+  },
+  "hybrid_test": {
+    "biobert_hybrid": {
+      "overall": {
+        "recall@10": 0.71068,
+        "mrr@10": 0.900199,
+        "question_count": 501,
+        "unavailable_gold_document_references": 5
+      },
+      "by_question_type": {
+        "factoid": {
+          "recall@10": 0.716967,
+          "mrr@10": 0.888925,
+          "question_count": 142,
+          "unavailable_gold_document_references": 1
+        },
+        "list": {
+          "recall@10": 0.6441,
+          "mrr@10": 0.947959,
+          "question_count": 98,
+          "unavailable_gold_document_references": 2
+        },
+        "summary": {
+          "recall@10": 0.750124,
+          "mrr@10": 0.922139,
+          "question_count": 134,
+          "unavailable_gold_document_references": 1
+        },
+        "yesno": {
+          "recall@10": 0.713409,
+          "mrr@10": 0.8528,
+          "question_count": 127,
+          "unavailable_gold_document_references": 1
+        }
+      },
+      "split": "test"
+    },
+    "medcpt_hybrid": {
+      "overall": {
+        "recall@10": 0.740575,
+        "mrr@10": 0.911945,
+        "question_count": 501,
+        "unavailable_gold_document_references": 5
+      },
+      "by_question_type": {
+        "factoid": {
+          "recall@10": 0.738415,
+          "mrr@10": 0.891588,
+          "question_count": 142,
+          "unavailable_gold_document_references": 1
+        },
+        "list": {
+          "recall@10": 0.668201,
+          "mrr@10": 0.929705,
+          "question_count": 98,
+          "unavailable_gold_document_references": 2
+        },
+        "summary": {
+          "recall@10": 0.782466,
+          "mrr@10": 0.939428,
+          "question_count": 134,
+          "unavailable_gold_document_references": 1
+        },
+        "yesno": {
+          "recall@10": 0.754637,
+          "mrr@10": 0.892004,
+          "question_count": 127,
+          "unavailable_gold_document_references": 1
+        }
+      },
+      "split": "test"
+    }
+  }
+}

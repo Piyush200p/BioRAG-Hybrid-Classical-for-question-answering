@@ -3,7 +3,17 @@
   "retrieval": {
     "lexical_weight": 0.60,
     "semantic_weight": 0.40,
-    "top_k_documents": 3
+    "top_k_documents": 3,
+    "dense_models": {
+      "biobert": "dmis-lab/biobert-base-cased-v1.2",
+      "medcpt_query": "ncbi/MedCPT-Query-Encoder",
+      "medcpt_article": "ncbi/MedCPT-Article-Encoder"
+    },
+    "embedding_cache_format": "npz",
+    "document_max_length": 512,
+    "query_max_length": 64,
+    "validation_objective": "mrr_at_k",
+    "fusion_weight_step": 0.05
   },
   "evidence": {
     "states": ["SUPPORT", "CONTEXT", "NOISE"],

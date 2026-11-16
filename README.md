@@ -6,7 +6,9 @@ This repository contains the research review, dataset decision, reproducible dia
 
 ## Quick start
 
-The initial implementation uses only the Python standard library, so it can run without GPU access or external model downloads.
+The original baseline uses the Python standard library. The split-aware scorer
+for pretrained embedding caches requires NumPy; generating BioBERT/MedCPT
+caches requires PyTorch and Transformers in a GPU notebook/runtime.
 
 ```bash
 cd /home/anmol/BioRAG-Hybrid-Evaluation1
@@ -21,19 +23,22 @@ The demonstration uses a six-question **synthetic smoke fixture** shaped like Bi
 ```text
 BioRAG-Hybrid-Evaluation1/
 ├── README.md
-├── requirements.txt                 # standard-library baseline; optional stack documented
+├── requirements.txt                 # NumPy for cached-vector CPU evaluation
 ├── pyproject.toml
 ├── config/prototype.json
 ├── data/sample/bioasq_sample.json   # synthetic, non-sensitive fixture
 ├── src/biorag/
 │   ├── data.py                       # BioASQ-shaped loader and validation
 │   ├── text.py                       # biomedical-safe normalization and sentence splitting
-│   ├── retrieval.py                  # BM25 + deterministic subword similarity proxy
+│   ├── retrieval.py                  # BM25 + deterministic subword proxy; BM25 scores exposed for ablations
+│   ├── dense_retrieval.py            # validated NPZ cache loading and CPU cosine scoring
 │   ├── hmm.py                        # transparent HMM/Viterbi sentence evidence selector
 │   ├── metrics.py                    # retrieval, exact-answer, F1 and ROUGE-L checks
 │   └── run_pipeline.py               # executable end-to-end demo
 ├── tests/test_pipeline.py
 ├── tools/inspect_bioasq.py          # version/checksum/schema inspection
+├── tools/encode_embeddings.py       # pretrained inference for Colab/Kaggle
+├── tools/evaluate_retrieval.py      # split-aware ablations and validation tuning
 ├── notebooks/                        # implementation status and follow-up plan
 │   └── BioRAG_Hybrid_Implementation_Status.ipynb
 ├── docs/                             # research, slides, viva and milestone evidence
@@ -52,6 +57,18 @@ BioRAG-Hybrid-Evaluation1/
 5. **Evaluation:** document recall@k/MRR, exact-answer EM/F1 for short answers, ROUGE-L for summaries, and a manually inspected support/error sample.
 
 The lightweight subword representation is an implementation-stage similarity proxy, not a claim that it is equivalent to BioBERT, MedCPT, CBOW/Skip-gram training, or a modern dense encoder. The upgrade path is specified in `docs/03_dataset_methodology.md`.
+
+## Pretrained retrieval experiment
+
+The neural experiment preserves the current BM25 route and adds independent
+BioBERT and MedCPT dense baselines plus separate BM25+dense fusion runs. Frozen
+pretrained models generate vectors in Colab/Kaggle; NumPy cache scoring,
+validation weight tuning, and held-out evaluation run locally on CPU. BioBERT
+uses masked mean pooling as an embedding baseline. MedCPT uses its paired query
+and article encoders with `[CLS]` representations. See
+`data/official/embeddings/README.md` for cache generation and evaluation
+commands. Fusion weights are tuned on validation only; test is scored after
+both model weights are selected.
 
 ## Dataset access
 

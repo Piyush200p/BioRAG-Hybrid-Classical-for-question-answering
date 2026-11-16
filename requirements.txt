@@ -1,7 +1,8 @@
 # Evaluation-1 baseline: Python standard library only.
-# Optional neural upgrade (install deliberately after hardware/licence review):
+# CPU scoring/evaluation of cached vectors:
+numpy>=1.24,<3
+# Optional GPU embedding generation (install a PyTorch build matching the
+# selected Colab/Kaggle CUDA runtime; see data/official/embeddings/README.md):
 # torch
 # transformers
-# sentence-transformers
-# faiss-cpu
 # python-pptx
